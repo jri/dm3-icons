@@ -29,6 +29,7 @@ Installation
 
 4.  Copy additional stuff:
         cp -r vendor/dm3-icons/views/dm3-icons views
+        cp -r vendor/dm3-icons/views/dm3-icons_by-attachment views
 
 5.  Upload changes to CouchDB:
         couchapp push http://localhost:5984/deepamehta3-db
@@ -54,4 +55,4 @@ Issues
 
 ------------
 Jörg Richter  
-Feb 9, 2010
+Feb 16, 2010

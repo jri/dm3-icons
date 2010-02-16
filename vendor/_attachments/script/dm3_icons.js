@@ -109,6 +109,9 @@ function dm3_icons() {
         return render_icon(get_icon(rel_topics[0].id))
     }
 
+    /**
+     * @param   icon    an Icon object
+     */
     function render_icon(icon) {
         return $("<img>").attr({id: icon.id, src: db.uri + icon.id + "/" + icon.src}).addClass("type-icon")
     }
@@ -135,5 +138,15 @@ function dm3_icons() {
         this.id = row.id
         this.label = row.value.label
         this.src = row.value.src
+    }
+}
+
+/**
+ * @return  ID of "Icon" topic, or undefined.
+ */
+dm3_icons.by_attachment = function(icon_src) {
+    var rows = db.view("deepamehta3/dm3-icons_by-attachment", {key: icon_src}).rows
+    if (rows.length) {
+        return rows[0].id
     }
 }
